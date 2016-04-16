@@ -24,7 +24,7 @@ node[:deploy].each do |application, deploy|
   end
 
   template "#{deploy[:deploy_to]}/current/wp-config.php" do
-    source "web-config.php.erb"
+    source "wp-config.php.erb"
     mode 0644
     variables(
       :dbhost => node['deploy']['teachunlimited']['database']['host'],
